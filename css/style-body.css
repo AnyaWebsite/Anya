@@ -1,15 +1,16 @@
 :root {
   font-size: 16px;
-  --royal-blue-light: #E6648A;
+  --navbar: #000;
   --royal-blue-dark: #E6648A;
   --white: #fff;
-  --backgroud: #e2e3e9;
+  --backgroud: #000;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 body {
@@ -29,10 +30,12 @@ a {
   align-items: center;
   border-radius: 5px;
   justify-content: space-between;
-  background: var(--royal-blue-light);
+  background: var(--navbar);
   height: 4.6875rem;
   padding: 1rem;
+  animation: iniciar .7s forwards;
 }
+
 .pc1 {
   width: 44xp;
   border-radius: 100px;
@@ -241,6 +244,19 @@ a {
     }
 
 }
+
+@keyframes iniciar {
+  from {
+    opacity: 0;
+    transform: translate3d( 0, -60px, 0 )
+  }
+  
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0)
+  }
+}
+
 div {
     text-align: center;
 }
@@ -253,6 +269,7 @@ div h1{
     margin-bottom: 10px;
     line-height: 2.5em;
     font-weight: 700;
+    animation: iniciar .7s forwards;
 }
 
 div h2 span{
@@ -264,19 +281,43 @@ div p{
     text-align: center;
     color: #ff8aad;
     font-size: 140%;
+    animation: iniciar .7s forwards;
 }
+
+.digitando::after {
+  content: '|';
+  margin-left: 5px;
+  opacity: 1;
+  animation: pisc .5s infinite;
+}
+
+@keyframes pisc {
+  from {
+    opacity: 1;
+  }
+  
+  to {
+    opacity: 0;
+  }
+}
+
 div a {
     text-align: center;
     display: inline-block;
     margin-top: 50px;
     padding: 10px 25px;
-    background: #E6648A;
+    background: transparent;
     color: #fff;
     font-weight: 500;
     letter-spacing: 1px;
     text-decoration: none;
-    border-radius: 40px;
     transition: 0.3s ease-in-out;
+    justify-self: start;
+    color: #fff;
+    padding: 15px 40px;
+    border-radius: 5px;
+    border: 2px solid white;
+    animation: iniciar .7s forwards;
 }
 div a:hover{
     
